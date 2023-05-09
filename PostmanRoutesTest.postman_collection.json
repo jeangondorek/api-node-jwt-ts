@@ -30,13 +30,36 @@
 			"response": []
 		},
 		{
+			"name": "Index do projeto(token)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE0ODU2NmNiNjcyZmEwYTg0ZmM3ZiIsImlhdCI6MTY4MzYzODM3NSwiZXhwIjoxNjg0MjQzMTc1fQ.qsVjU4pe3-PVjlT6gblYk1Kc46qqc7DkwAvVYIH-uz8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Users",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "auth",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTkxYjA0NzI2ODNlZDNkY2E2N2ZmYyIsImlhdCI6MTY4MzU2MzMxNCwiZXhwIjoxNjg0MTY4MTE0fQ.hsUTchj5OksGb29NpSxVQrBrhiO91bpZfr6bR37ovA0",
+						"value": "{{auth}}",
 						"type": "text"
 					}
 				],
@@ -59,7 +82,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"jose@pedro.com\",\r\n    \"password\": \"1232\"\r\n}",
+					"raw": "{\r\n    \"email\": \"jose2@pedro.com\",\r\n    \"password\": \"1232\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -67,13 +90,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/users/create",
+					"raw": "{{base_url}}/users",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
-						"users",
-						"create"
+						"users"
 					]
 				}
 			},
@@ -83,10 +105,16 @@
 			"name": "Post User Get Token(Login)",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "auth",
+						"value": "{{auth}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"jose@pedro.com\",\r\n    \"password\": \"1232\"\r\n}",
+					"raw": "{\r\n    \"email\": \"jose2@pedro.com\",\r\n    \"password\": \"1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -101,6 +129,72 @@
 					"path": [
 						"users",
 						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User by email",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "auth",
+						"value": "{{auth}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jose@pedro.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch User",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "auth",
+						"value": "{{auth}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jose2@pedro.com\",\r\n    \"password\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						""
 					]
 				}
 			},
@@ -130,7 +224,12 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "localhost:8080",
+			"value": "https://jeangondorek-automatic-space-engine-g5w54454j69f9vwv-3000.preview.app.github.dev",
+			"type": "string"
+		},
+		{
+			"key": "auth",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE1Zjc1M2JmMmJjMzc3NDRlNmUxNSIsImlhdCI6MTY4MzY0NTc3OSwiZXhwIjoxNjg0MjUwNTc5fQ.lIy3ySexx5PMtXQpM2hev17evID0wYXi44gmftMUEzk",
 			"type": "string"
 		}
 	]
