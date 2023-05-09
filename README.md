@@ -2,7 +2,7 @@
 
 ![MIT](https://img.shields.io/github/license/jeangondorek/api-rest-nodejs?style=for-the-badge)
 
-The same API that [API NODE JWT TS](https://github.com/jeangondorek/api-nodejs-withJWT), but using NodeJs and TS.
+The same API that [API NODE JWT JS](https://github.com/jeangondorek/api-nodejs-withJWT), but using NodeJs and TS.
 
 ## Tecnologias usadas
 
