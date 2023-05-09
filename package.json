@@ -2,7 +2,7 @@
   "scripts": {
     "start": "nodemon src/App.ts",
     "dev": "nodemon src/App.ts",
-    "build": "sucrase .src -d ./dist --transforms typescript,imports"
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "dependencies": {
     "@types/typescript": "^2.0.0",
