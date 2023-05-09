@@ -63,3 +63,7 @@ npm i
 ```
 npm start
 ```
+
+### Testes
+
+O arquivo `PostmanRoutesTest.postman_collection.json` contém os testes das rotas, que tamém podem ser testadas no swagger quando iniciada api.
