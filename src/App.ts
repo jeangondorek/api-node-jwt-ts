@@ -1,12 +1,25 @@
 import swaggerUi from "swagger-ui-express";
-import swaggerDocs from "./swagger.json";
 import express from "express";
 import bodyParser from "body-parser";
 import config from "./Config/config";
 import mongoose from "mongoose";
-import indexRoute from "./Routes/index";
-import usersRoute from "./Routes/users";
+import indexRoute from "./Routes/Index";
+import router from "./Controller/UserController";
+import swaggerJSDoc from 'swagger-jsdoc';
 
+
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'My API',
+      version: '1.0.0',
+    },
+  },
+  apis: ['./src/Routes/**/*.ts','./src/Routes/*.ts', '../../Models/*.ts'], // caminho para os arquivos de rota
+};
+
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
 const app = express();
 const port = 3000;
 const url = config.bd_string;
@@ -25,14 +38,13 @@ mongoose.connection.on("connected", () => {
   console.log("App conectada");
 });
 
-
-app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/", indexRoute);
-app.use("/users", usersRoute);
+app.use(router);
 
 app.listen(port, () => {
   console.log(`App rodando na porta ${port}`);
