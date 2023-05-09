@@ -17,7 +17,7 @@
 
 ### Rodando o projeto
 
-Necessário criar um arquivo na pasta `Config` chamado `config.js` com as seguntes configurações.
+Necessário criar um arquivo na pasta `Config` chamado `config.ts` com as seguntes configurações.
 
 - `bd_string` - String de conexão com o mongo
 - `jwt_pass` - Token/senha do jwt
