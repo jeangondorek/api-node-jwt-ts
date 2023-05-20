@@ -21,7 +21,7 @@ const swaggerOptions = {
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const url = config.bd_string;
 
 mongoose.connect(url);
