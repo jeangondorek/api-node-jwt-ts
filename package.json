@@ -25,5 +25,22 @@
     "sucrase": "^3.32.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
-  }
+  },
+  "name": "api-node-jwt-ts",
+  "description": "![MIT](https://img.shields.io/github/license/jeangondorek/api-rest-nodejs?style=for-the-badge)",
+  "version": "1.0.0",
+  "main": "./src/App.ts",
+  "engines": { 
+    "node": "14.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeangondorek/api-node-jwt-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeangondorek/api-node-jwt-ts/issues"
+  },
+  "homepage": "https://github.com/jeangondorek/api-node-jwt-ts#readme"
 }
