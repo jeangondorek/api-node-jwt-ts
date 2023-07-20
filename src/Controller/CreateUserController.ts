@@ -1,6 +1,6 @@
 import express, { Request, Response, Router } from 'express';
-import Users, { IUser } from '../../Model/UserModel';
-import creatToken from '../../Utils/Token'
+import Users, { IUser } from '../Model/UserModel';
+import creatToken from '../Utils/Token'
 const router: Router = express.Router();
 
 /**
@@ -51,7 +51,6 @@ const router: Router = express.Router();
  *         type: string
  *         example: john.doe@example.com
  */
-
 
 router.post('/', async (req: Request, res: Response) => {
     const { email, password } = req.body;

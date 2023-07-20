@@ -1,6 +1,6 @@
 import express, { Request, Response, Router } from 'express';
-import Users, { IUser } from '../../Model/UserModel';
-import authMiddleware from '../../Middlewares/AuthMidlleare';
+import Users, { IUser } from '../Model/UserModel';
+import authMiddleware from '../Middlewares/AuthMidlleare';
 const router: Router = express.Router();
 
 /**
@@ -33,6 +33,7 @@ const router: Router = express.Router();
  *       500:
  *         description: Não foi possível excluir o usuário
  */
+
 router.delete('/',authMiddleware, async (req: Request, res: Response) => {
     const { email } = req.body;
   
@@ -50,3 +51,4 @@ router.delete('/',authMiddleware, async (req: Request, res: Response) => {
   });
 
   export default router;
+  

@@ -1,10 +1,10 @@
-import swaggerUi from "swagger-ui-express";
-import express from "express";
-import bodyParser from "body-parser";
-import config from "./Config/Config";
-import mongoose from "mongoose";
-import indexRoute from "./Routes/Index";
-import router from "./Controller/UserController";
+import swaggerUi from 'swagger-ui-express';
+import express from 'express';
+import bodyParser from 'body-parser';
+import config from './Config/Config';
+import mongoose from 'mongoose';
+import indexRoute from './Routes/Index';
+import router from './Routes/User';
 import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerOptions = {
@@ -15,7 +15,7 @@ const swaggerOptions = {
       version: '1.0.0',
     },
   },
-  apis: ['./src/Routes/**/*.ts','./src/Routes/*.ts', '../../Models/*.ts'], // caminho para os arquivos de rota
+  apis: ['./src/Routes/**/*.ts','./src/Routes/*.ts','./src/Controller/*.ts', '../../Models/*.ts'], // caminho para os arquivos de rota
 };
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
@@ -25,16 +25,16 @@ const url = config.bd_string;
 
 mongoose.connect(url);
 
-mongoose.connection.on("error", (err) => {
-  console.log("Erro na conexão", +err);
+mongoose.connection.on('error', (err) => {
+  console.log('Erro na conexão', +err);
 });
 
-mongoose.connection.on("disconnected", () => {
-  console.log("App desconectada");
+mongoose.connection.on('disconnected', () => {
+  console.log('App desconectada');
 });
 
-mongoose.connection.on("connected", () => {
-  console.log("App conectada");
+mongoose.connection.on('connected', () => {
+  console.log('App conectada');
 });
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));

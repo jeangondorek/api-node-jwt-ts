@@ -1,8 +1,7 @@
 import express, { Request, Response, Router } from 'express';
-import Users, { IUser } from '../../Model/UserModel';
+import Users, { IUser } from '../Model/UserModel';
 const router: Router = express.Router();
-import authMiddleware from '../../Middlewares/AuthMidlleare';
-
+import authMiddleware from '../Middlewares/AuthMidlleare';
 
 /**
  * @swagger
@@ -54,7 +53,6 @@ import authMiddleware from '../../Middlewares/AuthMidlleare';
  *       500:
  *         description: Erro na consulta de usuários
  */
-
 
 router.get('/', authMiddleware, async (req: Request, res: Response) => {
   try {

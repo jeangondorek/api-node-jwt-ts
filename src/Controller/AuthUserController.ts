@@ -1,7 +1,7 @@
 import express, { Request, Response, Router } from 'express';
-import Users, { IUser } from '../../Model/UserModel';
+import Users, { IUser } from '../Model/UserModel';
 import bcrypt from 'bcrypt';
-import creatToken from '../../Utils/Token'
+import creatToken from '../Utils/Token'
 const router: Router = express.Router();
 
 /**
@@ -52,7 +52,6 @@ const router: Router = express.Router();
  *      '500':
  *        description: Erro interno do servidor.
  */
-       
 
 router.post('/auth', async (req: Request, res: Response) => {
     const { email, password } = req.body;
@@ -75,3 +74,4 @@ router.post('/auth', async (req: Request, res: Response) => {
   });
 
   export default router;
+  

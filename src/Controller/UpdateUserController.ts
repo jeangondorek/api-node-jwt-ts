@@ -1,9 +1,8 @@
 import express, { Request, Response, Router } from 'express';
-import Users, { IUser } from '../../Model/UserModel';
+import Users, { IUser } from '../Model/UserModel';
 import bcrypt from 'bcrypt';
-import authMiddleware from '../../Middlewares/AuthMidlleare';
+import authMiddleware from '../Middlewares/AuthMidlleare';
 const router: Router = express.Router();
-
 
 /**
  * @swagger
@@ -39,6 +38,7 @@ const router: Router = express.Router();
  *       500:
  *         description: Não foi possível atualizar a senha do usuário
  */
+
 router.patch('/',authMiddleware, async (req: Request, res: Response) => {
     const { email, password } = req.body;
   
