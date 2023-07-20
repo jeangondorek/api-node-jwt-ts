@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "11e30c4b-d403-4a5c-a438-85918d909abf",
-		"name": "PostmanRoutesTest",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26614633"
+		"_postman_id": "965bfe88-c99f-490f-8699-bb5ad7d70d8e",
+		"name": "PostmanRoutesTest Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -13,17 +12,14 @@
 				"header": [
 					{
 						"key": "auth",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE0ODU2NmNiNjcyZmEwYTg0ZmM3ZiIsImlhdCI6MTY4MzYzODM3NSwiZXhwIjoxNjg0MjQzMTc1fQ.qsVjU4pe3-PVjlT6gblYk1Kc46qqc7DkwAvVYIH-uz8",
+						"value": "{{auth}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/",
+					"raw": "{{base_url}}",
 					"host": [
 						"{{base_url}}"
-					],
-					"path": [
-						""
 					]
 				}
 			},
@@ -36,17 +32,14 @@
 				"header": [
 					{
 						"key": "auth",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE0ODU2NmNiNjcyZmEwYTg0ZmM3ZiIsImlhdCI6MTY4MzYzODM3NSwiZXhwIjoxNjg0MjQzMTc1fQ.qsVjU4pe3-PVjlT6gblYk1Kc46qqc7DkwAvVYIH-uz8",
+						"value": "{{auth}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/",
+					"raw": "{{base_url}}",
 					"host": [
 						"{{base_url}}"
-					],
-					"path": [
-						""
 					]
 				}
 			},
@@ -64,12 +57,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/users",
+					"raw": "{{base_url}}users",
 					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"users"
+						"{{base_url}}users"
 					]
 				}
 			},
@@ -90,12 +80,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/users",
+					"raw": "{{base_url}}users",
 					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"users"
+						"{{base_url}}users"
 					]
 				}
 			},
@@ -122,12 +109,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/users/auth",
+					"raw": "{{base_url}}users/auth",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}users"
 					],
 					"path": [
-						"users",
 						"auth"
 					]
 				}
@@ -147,7 +133,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"jose@pedro.com\"\r\n}",
+					"raw": "{\r\n    \"email\": \"123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -155,12 +141,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/users/",
+					"raw": "{{base_url}}users/",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}users"
 					],
 					"path": [
-						"users",
 						""
 					]
 				}
@@ -188,12 +173,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/users/",
+					"raw": "{{base_url}}users/",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}users"
 					],
 					"path": [
-						"users",
 						""
 					]
 				}
@@ -224,12 +208,12 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "https://jeangondorek-automatic-space-engine-g5w54454j69f9vwv-3000.preview.app.github.dev",
+			"value": "https://jeangondorek-silver-broccoli-4g9gjjgqj9vfjp9p-3000.preview.app.github.dev/",
 			"type": "string"
 		},
 		{
 			"key": "auth",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWE1Zjc1M2JmMmJjMzc3NDRlNmUxNSIsImlhdCI6MTY4MzY0NTc3OSwiZXhwIjoxNjg0MjUwNTc5fQ.lIy3ySexx5PMtXQpM2hev17evID0wYXi44gmftMUEzk",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjkzNmQ0ODAyMzQzN2YzOGZiYTVhMSIsImlhdCI6MTY4OTg1OTc5NiwiZXhwIjoxNjkwNDY0NTk2fQ.iTWb2t3RMhV41O1lerPOBVldtiYoOd3KOHg4u4aCI5I",
 			"type": "string"
 		}
 	]

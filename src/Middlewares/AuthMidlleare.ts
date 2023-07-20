@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import config from '../Config/config';
+import config from '../Config/Config';
 
 const auth = (req: Request, res: Response, next: NextFunction): void => {
   const tokenHeader = req.headers.auth;
@@ -10,7 +10,7 @@ const auth = (req: Request, res: Response, next: NextFunction): void => {
   jwt.verify(tokenHeader as string, config.jwt_pass, (err, decoded) => {
     if (err) return res.status(401).send({ error: 'Token inválido.' });
 
-    req.user_id = (decoded as { id: string }).id;
+    req.headers.user_id = (decoded as { id: string }).id;
     next();
   });
 };

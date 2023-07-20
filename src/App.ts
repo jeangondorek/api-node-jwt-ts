@@ -1,12 +1,11 @@
 import swaggerUi from "swagger-ui-express";
 import express from "express";
 import bodyParser from "body-parser";
-import config from "./Config/config";
+import config from "./Config/Config";
 import mongoose from "mongoose";
 import indexRoute from "./Routes/Index";
 import router from "./Controller/UserController";
 import swaggerJSDoc from 'swagger-jsdoc';
-
 
 const swaggerOptions = {
   definition: {
@@ -43,7 +42,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use("/", indexRoute);
+app.use('/', indexRoute);
 app.use(router);
 
 app.listen(port, () => {

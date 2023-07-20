@@ -54,7 +54,7 @@ const router: Router = express.Router();
  */
        
 
-router.post('/', async (req: Request, res: Response) => {
+router.post('/auth', async (req: Request, res: Response) => {
     const { email, password } = req.body;
   
     if (!email || !password) {
@@ -62,7 +62,7 @@ router.post('/', async (req: Request, res: Response) => {
     }
   
     try {
-      const user: IUser | null = await Users.findOne({ email }).select('password');
+      const user: IUser = await Users.findOne({ email }).select('password');
       if (!user) return res.status(400).send({ error: 'Usuário não registrado' });
   
       const pass_ok: boolean = await bcrypt.compare(password, user.password);

@@ -12,5 +12,4 @@ router.use('/users', deletetRouter);
 router.use('/users', authRouter);
 router.use('/users', updateRouter);
 
-
 export default router;
